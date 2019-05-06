@@ -23,17 +23,14 @@
       </div>
     </div>
 
-    <div
+    <BaseDate
       class="post-date text-faded"
-      :title="post.publishedAt | readableDate"
-    >
-      {{ post.publishedAt | timePassed }}
-    </div>
+      :timestamp="post.publishedAt"
+    />
   </div>
 </template>
 
 <script>
-import moment from "moment";
 import sourceData from "../data.json";
 
 export default {
@@ -49,15 +46,6 @@ export default {
     },
     userPostsCount() {
       return Object.keys(this.user.posts).length;
-    }
-  },
-
-  filters: {
-    readableDate(date) {
-      return moment.unix(date).format("MMMM Do YYYY, h:mm:ss a");
-    },
-    timePassed(date) {
-      return moment.unix(date).fromNow();
     }
   }
 };
