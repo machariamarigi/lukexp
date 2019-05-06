@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import HomePage from '@/pages/HomePage';
 import ShowThreadPage from '@/pages/ShowThreadPage';
+import ForumPage from '@/pages/ForumPage';
 import NotFoundPage from '@/pages/NotFoundPage';
 
 Vue.use(Router);
@@ -12,6 +13,12 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: HomePage
+    },
+    {
+      path: '/forum/:id',
+      name: 'Forum',
+      component: ForumPage,
+      props: true
     },
     {
       path: '/thread/:id',
