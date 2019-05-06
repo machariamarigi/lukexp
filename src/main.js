@@ -3,13 +3,15 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
+import BaseDate from './components/BaseDate';
 
 Vue.config.productionTip = false;
+Vue.component('BaseDate', BaseDate);
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>',
+  template: '<App/>'
 });
