@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import HomePage from '@/pages/HomePage';
+import CategoryPage from '@/pages/CategoryPage';
 import ShowThreadPage from '@/pages/ShowThreadPage';
 import ForumPage from '@/pages/ForumPage';
 import NotFoundPage from '@/pages/NotFoundPage';
@@ -13,6 +14,12 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: HomePage
+    },
+    {
+      path: '/category/:id',
+      name: 'Category',
+      component: CategoryPage,
+      props: true
     },
     {
       path: '/forum/:id',
