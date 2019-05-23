@@ -6,7 +6,10 @@
     <router-link
       :to="{name: 'Home'}"
       class="logo"
-    ><img src="../assets/img/svg/wolf.svg" style="fill: white;"></router-link>
+    ><img
+        src="../assets/img/svg/wolf.svg"
+        style="fill: white;"
+      ></router-link>
 
     <div class="btn-hamburger">
       <!-- use .btn-humburger-active to open the menu -->
@@ -23,11 +26,11 @@
           <a href="#">
             <img
               class="avatar-small"
-              src="https://pbs.twimg.com/profile_images/766776601627549696/6aGirGFY_400x400.jpg"
+              :src="user.avatar"
               alt=""
             >
             <span>
-              Macharia Marigi
+              {{ user.name }}
               <img
                 class="icon-profile"
                 src="../assets/img/svg/arrow-profile.svg"
@@ -73,6 +76,14 @@
 </template>
 
 <script>
-export default {};
+import { mapGetters } from "vuex";
+
+export default {
+  computed: {
+    ...mapGetters({
+      user: "authUser"
+    })
+  }
+};
 </script>
 
