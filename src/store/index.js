@@ -6,7 +6,16 @@ import sourceData from '../data.json';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: sourceData,
+  state: {
+    ...sourceData,
+    authId: 'rpbB8C6ifrYmNDufMERWfQUoa202'
+  },
+
+  getters: {
+    authUser({ users, authId }) {
+      return users[authId];
+    }
+  },
 
   actions: {
     createPost({ commit }, post) {
