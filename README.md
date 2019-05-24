@@ -1,6 +1,6 @@
 # lukexp
 
-> Project for lerarning and experiamenting on Vue JS framework
+> Project for learning and experimenting on Vue JS framework
 
 ## Build Setup
 
