@@ -24,8 +24,8 @@
         <span class="online">{{ user.username }} is online</span>
 
         <div class="stats">
-          <span>{{ userPostsCount }} posts</span>
-          <span>{{ userThreadsCount }} threads</span>
+          <span>{{ userPostsCount }} {{ userPostsCount === 1 ? 'post' : 'posts' }}</span>
+          <span>{{ userThreadsCount }} {{ userThreadsCount === 1 ? 'thread' : 'threads' }}</span>
         </div>
 
         <hr>
@@ -68,6 +68,7 @@
 <script>
 import { mapGetters } from "vuex";
 import PostList from "../components/PostList";
+import { countObjectProperties } from "../utils";
 
 export default {
   components: {
@@ -80,18 +81,18 @@ export default {
     }),
 
     userThreadsCount() {
-      return this.user.threads ? Object.keys(this.user.threads).length : 0;
+      return countObjectProperties(this.user.threads);
     },
 
     userPostsCount() {
-      return this.user.posts ? Object.keys(this.user.posts).length : 0;
+      return countObjectProperties(this.user.posts);
     },
 
     userPosts() {
-      if(this.user.posts) {
+      if (this.user.posts) {
         return Object.values(this.$store.state.posts).filter(
-          post => post.userId === this.user['.key']
-        )
+          post => post.userId === this.user[".key"]
+        );
       }
       return [];
     }
