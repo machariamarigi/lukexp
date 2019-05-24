@@ -18,5 +18,5 @@ export default {
 </script>
 
 <style>
-@import "./assets/css/style.css";
+@import "https://dl.dropbox.com/s/vw29tnowx9etx1o/style.css";
 </style>
