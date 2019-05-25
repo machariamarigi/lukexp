@@ -1,15 +1,8 @@
 <template>
-  <header
-    class="header"
-    id="header"
-  >
-    <router-link
-      :to="{name: 'Home'}"
-      class="logo"
-    ><img
-        src="../assets/img/svg/wolf.svg"
-        style="fill: white;"
-      ></router-link>
+  <header class="header" id="header">
+    <router-link :to="{ name: 'Home' }" class="logo"
+      ><img src="../assets/img/svg/wolf.svg" style="fill: white;"
+    /></router-link>
 
     <div class="btn-hamburger">
       <!-- use .btn-humburger-active to open the menu -->
@@ -21,21 +14,16 @@
     <!-- use .navbar-open to open nav -->
     <nav class="navbar">
       <ul>
-
         <li class="navbar-user">
-          <router-link :to="{name: 'Profile'}">
-            <img
-              class="avatar-small"
-              :src="user.avatar"
-              alt=""
-            >
+          <router-link :to="{ name: 'Profile' }">
+            <img class="avatar-small" :src="user.avatar" alt="" />
             <span>
               {{ user.name }}
               <img
                 class="icon-profile"
                 src="../assets/img/svg/arrow-profile.svg"
                 alt=""
-              >
+              />
             </span>
           </router-link>
 
@@ -44,7 +32,9 @@
           <div id="user-dropdown">
             <div class="triangle-drop"></div>
             <ul class="dropdown-menu">
-              <li class="dropdown-menu-item"><a href="profile.html">View profile</a></li>
+              <li class="dropdown-menu-item">
+                <a href="profile.html">View profile</a>
+              </li>
               <li class="dropdown-menu-item"><a href="#">Log out</a></li>
             </ul>
           </div>
@@ -86,4 +76,3 @@ export default {
   }
 };
 </script>
-

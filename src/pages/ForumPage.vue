@@ -6,10 +6,7 @@
           <h1>{{ forum.name }}</h1>
           <p class="text-lead">{{ forum.description }}</p>
         </div>
-        <a
-          href="new-thread.html"
-          class="btn-green btn-small"
-        >Start a thread</a>
+        <a href="new-thread.html" class="btn-green btn-small">Start a thread</a>
       </div>
     </div>
 

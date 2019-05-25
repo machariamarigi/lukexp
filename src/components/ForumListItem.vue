@@ -4,15 +4,16 @@
       <router-link
         href="#"
         class="forum-name"
-        :to="{name: 'Forum', params: { id: forum['.key']}}"
-      >{{ forum.name }}</router-link>
+        :to="{ name: 'Forum', params: { id: forum['.key'] } }"
+        >{{ forum.name }}</router-link
+      >
 
       <p class="forum-description ">{{ forum.description }}</p>
     </div>
 
     <div class="threads-count">
       <p class="count">{{ threadCount }}</p>
-      {{ threadCount === 1 ? 'thread' : 'threads' }}
+      {{ threadCount === 1 ? "thread" : "threads" }}
     </div>
 
     <div class="last-thread">
@@ -39,4 +40,3 @@ export default {
   }
 };
 </script>
-

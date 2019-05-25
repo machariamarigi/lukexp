@@ -2,18 +2,20 @@
   <div class="thread">
     <div>
       <p>
-        <router-link :to="{name: 'ShowThread', params: { id: thread['.key'] }}">{{ thread.title }}</router-link>
+        <router-link
+          :to="{ name: 'ShowThread', params: { id: thread['.key'] } }"
+          >{{ thread.title }}</router-link
+        >
       </p>
       <p class="text-faded text-xsmall">
-        By <a href="#">{{ user.name }}</a>,
+        By <a href="#">{{ user.name }}</a
+        >,
         <BaseDate :timestamp="thread.publishedAt" />
       </p>
     </div>
 
     <div class="activity">
-      <p class="replies-count">
-        {{ repliesCount }} replies
-      </p>
+      <p class="replies-count">{{ repliesCount }} replies</p>
 
       <!-- <img
         class="avatar-medium"
@@ -51,6 +53,3 @@ export default {
   }
 };
 </script>
-
-
-

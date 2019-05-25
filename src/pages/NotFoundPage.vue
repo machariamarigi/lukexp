@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="col-full"
-    :class="$style.centred"
-  >
+  <div class="col-full" :class="$style.centred">
     <h1 :class="$style.headingLarge">Not Found</h1>
     <p :class="$style.textLarge">
       Oops, We couldn't find what you're looking for.
@@ -27,4 +24,3 @@ export default {};
   font-weight: 100;
 }
 </style>
-

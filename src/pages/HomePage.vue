@@ -11,7 +11,7 @@ import CategoryList from "../components/CategoryList";
 export default {
   computed: {
     categories() {
-      return Object.values(this.$store.state.categories)
+      return Object.values(this.$store.state.categories);
     }
   },
 
