@@ -41,6 +41,12 @@ export default new Router({
       props: true
     },
     {
+      path: "/me/edit",
+      name: "EditProfile",
+      component: ProfilePage,
+      props: { edit: true }
+    },
+    {
       path: "*",
       name: "NotFound",
       component: NotFoundPage
