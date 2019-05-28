@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import Vue from "vue";
 import Vuex from "vuex";
 
@@ -18,10 +19,11 @@ export default new Vuex.Store({
   },
 
   actions: {
-    createPost({ commit }, post) {
+    createPost({ commit, state }, post) {
       const postId = `newpost ${Math.random()}`;
-      // eslint-disable-next-line no-param-reassign
       post[".key"] = postId;
+      post.userId = state.authId;
+      post.publishedAt = Math.floor(Date.now() / 1000);
       commit("setPost", { post, postId });
       commit("appendPostToThread", { threadId: post.threadId, postId });
       commit("appendPostToUser", { userId: post.userId, postId });
